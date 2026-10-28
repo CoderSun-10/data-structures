@@ -18,7 +18,7 @@ void SLDestroy(SL* ps) {
 }
 void SLCheckCapacity(SL* ps) {
 	//插入数据之前看空间够不够
-	if (ps->capacity = ps->size);
+	if (ps->capacity == ps->size);
 	int newCapacity = ps->capacity == 0 ? 4 : 2 * ps->capacity;
 	SLDataType* tmp = (SLDataType*)realloc(ps->arr, newCapacity * sizeof(SLDataType));
 	if (tmp == NULL) {
@@ -84,7 +84,7 @@ void SLInsert(SL* ps, int pos, SLDataType x) {
 	}
 
 	ps->arr[pos] = x;
-	ps->size--;
+	ps->size++;
 
 }
 //删除指定位置的数据

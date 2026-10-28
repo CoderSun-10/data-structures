@@ -95,7 +95,7 @@ void ContactModify(Contact* con) {
 	scanf("%s", con->arr[find].gender);
 
 	printf("请输入新的年龄:\n");
-	scanf("%d", con->arr[find].age);
+	scanf("%d", &con->arr[find].age);
 
 	printf("请输入新的电话:\n");
 	scanf("%s", con->arr[find].tel);
