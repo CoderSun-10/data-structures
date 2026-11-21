@@ -125,7 +125,7 @@ void LTInsert(LTNode* pos, LTDataType x) {
 	pos->next = newnode;
 }
 //删除pos节点
-void LTDestroy(LTNode* pos) {
+void LTErase(LTNode* pos) {
 	assert(pos);
 
 	//pos->prev pos pos->next
@@ -134,4 +134,18 @@ void LTDestroy(LTNode* pos) {
 
 	free(pos);
 	pos = NULL;
+}
+
+void LTDestroy(LTNode* phead) {
+	assert(phead);
+
+	LTNode* pcur = phead->next;
+	while (pcur != phead) {
+		LTNode* next = pcur->next;
+		free(pcur);
+		pcur = next;
+	}
+	//此时pcur指向phead,而phead还未被销毁
+	free(phead);
+	phead = NULL;
 }
